@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discord Hubs</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <h1>Discord Hubs</h1>
+
+    <h3>Servers</h3>
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Join</th>
+        </tr>
+        
+            <% servers.filter(s => !s.settings.hidden).forEach(server => { %>
+                <tr>
+                    <td><%= server.name %></td>
+                    <td>placeholder for description</td>
+                    <td><a href="https://discord.gg/<%= server.settings.invite %>">Join</a></td>
+                </tr>        
+            <% }) %>
+        
+      </table>
+    <h2>EXCUSE THE MESS, THE WEBSITE WILL HAVE A BETTER LOOK SOON</h2>
+</body>
+</html>
